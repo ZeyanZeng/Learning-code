@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**************************/
+int Time[] = {23, 55, 59};
+
+int *GetTime(void)
+{
+    return Time;
+}
+/**************************/
+
+int main(void)
+{
+    int *a;
+    a = GetTime();
+    printf("a[0] = %d\n", a[0]);
+    printf("a[1] = %d\n", a[1]);
+    printf("a[2] = %d\n", a[2]);
+
+    system("pause");
+
+    return 0;
+}

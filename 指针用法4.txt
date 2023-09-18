@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**************************/
+
+unsigned  char AirData[20];
+
+void DataSend(unsigned char *Data, unsigned char count)
+{
+    unsigned char i;
+    for (i = 0; i < count; i++)
+    {
+        AirData[i] = Data[i];
+    }
+}
+
+void DataReceive(unsigned char *Data, unsigned char count)
+{
+    unsigned char i;
+    for (i = 0; i < count; i++)
+    {
+        Data[i] = AirData[i];
+    }
+}
+
+
+
+int main(void)
+{
+    unsigned char i;
+    unsigned char array[]=  {0x12, 0x34, 0x56, 0x78};
+    DataSend(array, 4);
+
+    /*************************/
+    printf("\nAirData =");
+
+    for (i = 0; i < 20; i++)
+    {
+        printf("%x ", AirData[i]);
+    }
+
+    unsigned char array1[4];
+    DataReceive(array1, 4);
+
+    /*************************/
+    printf("\narray1 =");
+
+    for (i = 0; i < 4; i++)
+    {
+        printf("%x ", array[i]);
+    }
+
+
+
+
+
+    system("pause");
+
+    return 0;
+}

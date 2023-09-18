@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**************************/
+
+int main(void)
+{
+//     char a;
+//     char b[15];
+    FILE *f = fopen("D:\\text.txt", "w");
+    fputc('A', f);
+    fputs("Hello, World!", f);
+    // FILE *f = fopen("D:\\text.txt", "r");
+    // a = fgetc(f);
+    // fgets(b, 10, f);
+
+    // printf("%c", a);
+    // printf(b);
+
+    fclose(f);
+
+    system("pause");
+
+    return 0;
+}

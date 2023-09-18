@@ -1,0 +1,50 @@
+#include <stdio.h>
+// void fun (int param)
+// {
+//     printf("%x\n", param);
+// }
+
+int FindMaxAndCount(int *max, int *count, int *array, int length)
+{
+    *max = array[0];
+    *count = 1;
+    int i = 1;
+    for (i=1; i < length; i++)
+    {
+        if (array[i] > *max)
+        {
+            *max = array[i];
+            *count = 1;
+        }
+        else if (array[i] == *max)
+        {
+            (*count)++;
+        }
+        
+    }
+}
+
+int main(void)
+{
+    int a[] = {13, 2, 13, 4, 5};
+    int Max;
+    int Count; 
+    // int count;
+    // count = sizeof(a);
+    FindMaxAndCount(&Max, &Count, a, 6);
+    printf("Max = %d\n", Max);
+    printf("Count = %d\n", Count);
+
+
+    // int *a;
+    // a = malloc(3*4);
+    // *a = 0x33;
+    // *(a+1) = 0x34;
+    // *(a+2) = 0x35;
+
+    // printf("a[0] = %x\n", a[0]);
+    // printf("a[0] = %x\n", a[1]);
+    // printf("a[0] = %x\n", a[2]);
+    system("pause");
+    return 0;
+}
